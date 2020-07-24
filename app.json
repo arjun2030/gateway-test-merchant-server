@@ -12,7 +12,7 @@
         "GATEWAY_API_PASSWORD": {
             "required": true,
             "description": "Your TEST Gateway API password",
-            "value":"fuller@123"
+            "value":"64e44b1f9db39dc3950cc1fe0e3e48e2
         },
         "GATEWAY_REGION": {
             "required": true,
