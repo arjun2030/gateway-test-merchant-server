@@ -135,19 +135,14 @@ function outputJsonResponse($response) {
 
 function proxyCall($path) {
     global $headers, $gatewayUrl;
-     var_dump("开始请求");
-    var_dump($headers);
-    var_dump($gatewayUrl);
+  
     // get json payload from request
     $payload = getJsonPayload();
-    var_dump("getJsonPayload");
-    var_dump($payload);
+    
     // proxy authenticated request
     $response = doRequest($gatewayUrl . $path, $_SERVER['REQUEST_METHOD'], $payload, $headers);
 
     // output response
     outputJsonResponse($response);
-    
-    var_dump("end");
-    var_dump($response);
+
 }
