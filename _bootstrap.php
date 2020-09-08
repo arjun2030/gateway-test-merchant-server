@@ -25,30 +25,14 @@ $region = getenv('GATEWAY_REGION');
 $apiVersion = getenv('GATEWAY_API_VERSION');
 
 // merchant id must be TEST
-$merchantIdPrefix = substr($merchantId, 0, 4);
-if (strcasecmp($merchantIdPrefix, "test") != 0) {
-    error(500, 'Only TEST merchant IDs should be used with this software');
-}
+//$merchantIdPrefix = substr($merchantId, 0, 4);
+//if (strcasecmp($merchantIdPrefix, "test") != 0) {
+//    error(500, 'Only TEST merchant IDs should be used with this software');
+//}
 
 // get regional url prefix
-$prefix = 'mtf.';
-if (strcasecmp($region, "ASIA_PACIFIC") == 0) {
-    $prefix = 'ap.';
-} else if (strcasecmp($region, "EUROPE") == 0) {
-    $prefix = 'eu.';
-} else if (strcasecmp($region, "NORTH_AMERICA") == 0) {
-    $prefix = 'na.';
-} else if (strcasecmp($region, "INDIA") == 0) {
-    $prefix = 'in.';
-} else if (strcasecmp($region, "CHINA") == 0) {
-    $prefix = 'cn.';
-} else if (strcasecmp($region, "MTF") == 0) {
-    $prefix = 'mtf.';
-} else if (strcasecmp($region, "QA01") == 0) {
-    $prefix = 'qa01.';
-} else {
-    error(500, "Invalid region provided. Valid values include ASIA_PACIFIC, EUROPE, NORTH_AMERICA, INDIA, MTF");
-}
+$prefix = 'test-';
+
 
 // validate apiVersion is above minimum
 if (intval($apiVersion) < 39) {
